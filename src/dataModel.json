@@ -1,0 +1,103 @@
+{
+    "services": [
+        {
+            "thumbnail": "design",
+            "title": "UI/UX Design",
+            "description": "We design clean and user-friendly experiences so people can navigate your product easily and take action faster."
+        },
+        {
+            "thumbnail": "website",
+            "title": "Website Development",
+            "description": "We build fast, modern websites that look great, work smoothly, and help you get more customers."
+        },
+        {
+            "thumbnail": "mobile",
+            "title": "Mobile App Development",
+            "description": "We create mobile apps that are easy to use, reliable, and built to support your business goals."
+        },
+        {
+            "thumbnail": "ai",
+            "title": "AI Integration",
+            "description": "We help you use AI to automate tasks, improve workflows, and make smarter business decisions."
+        },
+        {
+            "thumbnail": "system",
+            "title": "System Integration",
+            "description": "We connect your tools and platforms so your data flows properly and your team spends less time doing manual work."
+        },
+        {
+            "thumbnail": "seo",
+            "title": "SEO Optimization",
+            "description": "We improve your website’s visibility on Google so the right people can find you and reach out faster."
+        }
+    ],
+    "why": [
+        {
+            "icon": "idea",
+            "title": "Expertise",
+            "description": "We are a skilled and passionate team with over 5 years of proven experience in driving digital transformation, and delivering innovative solutions."
+        },
+        {
+            "icon": "chart",
+            "title": "Growth-Focused Work",
+            "description": "Our solutions are designed to deliver seamless, engaging, and personalized customer experiences that drive satisfaction and brand loyalty."
+        },
+        {
+            "icon": "target",
+            "title": "Smart Strategy",
+            "description": "We combine business thinking with modern tech to drive real impact and to create strategies that deliver measurable impact and long-term success."
+        }
+    ],
+    "how": [
+        {
+            "icon": "phone",
+            "index": "01",
+            "title": "Discovery Call",
+            "description": "We take time to understand your business, goals, and current challenges, then align on what success looks like and what outcomes matter most."
+        },
+        {
+            "icon": "map",
+            "index": "02",
+            "title": "Strategy & Roadmap",
+            "description": "We define the best approach, prioritize key features, and build a clear roadmap with timelines, milestones, and next steps—so everything stays focused and predictable."
+        },
+        {
+            "icon": "connection",
+            "index": "03",
+            "title": "Design & Build",
+            "description": "We design a modern, user-friendly experience, develop your solution with clean scalable code, and test thoroughly to ensure it runs smoothly across devices."
+        },
+        {
+            "icon": "rocket",
+            "index": "04",
+            "title": "Launch & Optimize",
+            "description": "We launch confidently, monitor performance, and continuously improve with updates, and SEO enhancements, so your solution keeps delivering results."
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Jason Miller",
+            "position": "CEO, Tech Innovators",
+            "photo": "alice_johnson",
+            "feedback": "Pyrohx built us a modern website that loads fast and looks incredible. The process was smooth, and we started getting more qualified leads within weeks."
+        },
+        {
+            "name": "Ethan Brooks",
+            "position": "Founder, Startup Hub",
+            "photo": "michael_smith",
+            "feedback": "We needed multiple tools to work together, and Pyrohx handled the integrations perfectly. Everything is automated now, and our team saves hours every week."
+        },
+        {
+            "name": "Melissa Grant",
+            "position": "Marketing Director, Creative Solutions",
+            "photo": "sofia_martinez",
+            "feedback": "Pyrohx improved our SEO and helped us rank higher for the searches that matter. We’re getting more traffic, more calls, and better leads overall. We definitely recommend!"
+        },
+        {
+            "name": "Jason Miller",
+            "position": "CEO, Tech Innovators",
+            "photo": "alice_johnson",
+            "feedback": "Pyrohx built us a modern website that loads fast and looks incredible. The process was smooth, and we started getting more qualified leads within weeks."
+        }
+    ]
+}
