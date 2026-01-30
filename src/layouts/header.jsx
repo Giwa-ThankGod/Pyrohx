@@ -16,7 +16,7 @@ const Header = () => {
                         <p className="px-6">Contact</p>
                     </div>
                 </div>
-                <div className="hidden md:flex items-center gap-5">
+                <div className="hidden md:flex items-center gap-3">
                     <button className="px-6 h-12 flex items-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer">
                         Pay Invoice
                         <ArrowRightUp />
