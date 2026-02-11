@@ -21,31 +21,31 @@ const Footer = () => {
                         To help businesses grow with smart digital solutions to improve user experience, connect systems, and use AI to work smarter.
                     </p>
                     <div className="flex items-center gap-4">
-                        <Instagram />
-                        <Tiktok />
+                        <Instagram className="text-tertiary hover:!text-[var(--primary-color)] cursor-pointer" />
+                        <Tiktok className="text-tertiary hover:!text-[var(--primary-color)] cursor-pointer" />
                     </div>
                 </div>
 
                 <div className="w-full md:w-1/2 flex items-start justify-center gap-24">
                     <div className="space-y-2">
                         <h3 className="font-semibold">Quick Links</h3>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">Services</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Services</a>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Why Pyrohx</a>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">How we Work</a>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">Pay Invoice</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">How we Work</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Pay Invoice</a>
                     </div>
                     <div className="space-y-2">
                         <h3 className="font-semibold">Services</h3>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">Web Development</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Web Development</a>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">System Integration</a>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">AI Integration</a>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">SEO Optimization</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">AI Integration</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">SEO Optimization</a>
                     </div>
                     <div className="space-y-2">
                         <h3 className="font-semibold">Company</h3>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">About</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">About</a>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Contact</a>
-                        <a href="" className="inline-block text-sm md:text-base text-tertiary hover:underline">Login</a>
+                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Login</a>
                     </div>
                 </div>
             </div>
