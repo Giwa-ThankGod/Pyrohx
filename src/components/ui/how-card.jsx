@@ -22,23 +22,23 @@ const HowCard = ({ icon, index, title, description, stackIndex }) => {
     >
       <div className="flex flex-col md:flex-row items-center justify-between py-10 px-5 md:px-24 bg-[#FAFAFA] border-b-2 border-[var(--tertiary-color)]">
         <div className="w-full flex flex-col md:flex-row items-center gap-10">
-          <h2 className="text-base md:text-6xl text-[var(--tertiary-color)] font-medium">
+          <h2 className="text-4xl md:text-6xl text-[var(--tertiary-color)] font-medium">
             {index}
           </h2>
 
-          <div className="flex flex-col md:flex-row items-center gap-10">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div className="flex-shrink-0">
               {IconMapper[icon]}
             </div>
 
-            <div className="flex items-center gap-3">
-              <h3 className="sora text-2xl">{title}</h3>
-              <ArrowRight />
+            <div className="flex items-center gap-3 md:gap-8">
+              <h3 className="sora text-2xl md:text-4xl">{title}</h3>
+              <ArrowRight className="hidden md:block" />
             </div>
           </div>
         </div>
 
-        <p className="w-6/12 text-tertiary font-light">{description}</p>
+        <p className="md:w-6/12 mt-3 md:mt-0 text-tertiary text-center md:text-left font-light">{description}</p>
       </div>
     </div>
   );
