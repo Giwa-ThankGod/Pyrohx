@@ -1,7 +1,7 @@
 import Star from '../../assets/icons/star.svg?react';
 import Quote from '../../assets/icons/quote.svg?react';
 
-const TestimonyCard = ({ name, feedback }) => {
+const TestimonyCard = ({ name, feedback, photo }) => {
     return (
         <div className="flex-shrink-0 w-[469px] p-5 space-y-5 bg-[#263F43] border border-[#2C4D53] rounded-xl transition ease-in cursor-pointer">
             <div className="flex items-center justify-between">
@@ -15,7 +15,7 @@ const TestimonyCard = ({ name, feedback }) => {
 
             <div className="flex items-center gap-2">
                 <div className='w-[32px] h-[32px] bg-gray-200 rounded-full'>
-                    <img src="" alt="" className='w-full h-full object-cover rounded-full' />
+                    <img src={photo} alt="photo" className='w-full h-full object-cover rounded-full' />
                 </div>
                 <p className="text-white">{name}</p>
             </div>
