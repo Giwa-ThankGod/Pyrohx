@@ -3,7 +3,7 @@ import Quote from '../../assets/icons/quote.svg?react';
 
 const TestimonyCard = ({ name, feedback, photo }) => {
     return (
-        <div className="flex-shrink-0 w-[469px] p-5 space-y-5 bg-[#263F43] border border-[#2C4D53] rounded-xl transition ease-in cursor-pointer">
+        <div className="flex-shrink-0 w-[324px] md:w-[469px] p-5 space-y-5 bg-[#263F43] border border-[#2C4D53] rounded-xl transition ease-in cursor-pointer">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                  {Array(5).fill().map((_, i) => <Star key={i} />)}
