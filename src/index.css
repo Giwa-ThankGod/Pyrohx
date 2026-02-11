@@ -33,6 +33,10 @@ body {
   padding: 0;
 }
 
+a:hover {
+  color: var(--primary-color);
+}
+
 .sora {
   font-family: 'Sora', sans-serif; 
 }
