@@ -40,22 +40,22 @@ function App() {
 
   return (
     <div>
-      <div className='relative min-h-screen w-full'>
+      <div className='relative h-screen w-full'>
         {/* Background Overlay */}
         <ParticleBackground id="hero-particles" paritcleNumber={120} />
 
-        <div className='absolute inset-0 top-10 left-0 z-10 w-[400px] h-[400px]'>
+        <div className='absolute inset-0 top-10 left-0 z-10 w-[200px] h-[200px] lg:w-[400px] lg:h-[400px]'>
           <img src={UnionBg} alt="" className='' />
         </div>
 
-        <div className='z-10'>
+        <div className='z-10 w-full h-full'>
           <Header
             servicesRef={servicesRef}
             whyRef={whyRef}
             contactRef={contactRef}
           />
 
-          <div className='flex items-center justify-center py-36 sora text-3xl md:text-6xl'>
+          <div className='w-full h-full flex items-center justify-center sora text-3xl md:text-6xl'>
             <div className='w-full lg:w-8/12 lg:w-1/2 space-y-3 text-center'>
 
               <div className='flex items-center justify-center gap-5'>
