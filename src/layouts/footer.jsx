@@ -4,7 +4,7 @@ import Tiktok from "../assets/icons/tiktok.svg?react";
 
 const Footer = () => {
     return (
-        <div className="px-5 md:px-24 mt-5 md:mt-10 p-5 md:p-0">
+        <div className="px-5 md:px-10 lg:px-24 mt-5 md:mt-10 p-5 md:p-0">
             <div className="flex items-center gap-5 py-5">
                 <div className="w-10 md:w-14 h-10 md:h-14 bg-gray-200 rounded-full">
                     <Logo className="w-full h-full object-center rounded-full" />
@@ -15,9 +15,9 @@ const Footer = () => {
                 </p>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-5 py-5 md:py-10 border-y border-[var(--tertiary-color)]">
-                <div className="w-full md:w-1/2 space-y-5">
-                    <p className="w-full md:w-6/12 md:pr-8 text-sm md:text-base text-tertiary">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-5 py-5 md:py-10 border-y border-[var(--tertiary-color)]">
+                <div className="w-full lg:w-1/2 space-y-5">
+                    <p className="w-full lg:w-6/12 md:pr-8 text-sm md:text-base text-tertiary">
                         To help businesses grow with smart digital solutions to improve user experience, connect systems, and use AI to work smarter.
                     </p>
                     <div className="flex items-center gap-4">
@@ -26,7 +26,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/2 flex items-start justify-between md:justify-center md:gap-24">
+                <div className="w-full lg:w-1/2 flex items-start justify-between lg:justify-center md:gap-24">
                     <div className="space-y-2">
                         <h3 className="font-semibold">Quick Links</h3>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Services</a>
