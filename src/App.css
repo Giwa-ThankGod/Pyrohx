@@ -13,3 +13,48 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+
+
+
+/* Sidebar item entrance */
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sidebar-item {
+  animation: slideFadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger delays */
+.sidebar-item:nth-child(1) { animation-delay: 0.1s; }
+.sidebar-item:nth-child(2) { animation-delay: 0.18s; }
+.sidebar-item:nth-child(3) { animation-delay: 0.26s; }
+.sidebar-item:nth-child(4) { animation-delay: 0.34s; }
+
+/* Button subtle pop */
+@keyframes softPop {
+  0% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.sidebar-button {
+  animation: softPop 0.35s ease forwards;
+}
+
+/* Smooth hover lift */
+.hover-lift {
+  transition: all 0.25s cubic-bezier(.2,.8,.2,1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
