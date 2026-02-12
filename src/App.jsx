@@ -20,6 +20,7 @@ import TestimonyCard from './components/ui/testimony-card'
 import ArrowLeft from './assets/icons/arrow-left-1.svg?react';
 import ArrowRight from './assets/icons/arrow-right-1.svg?react';
 import { scrollToSection } from './utils/generic'
+import ParticleBackground from './components/ui/particle-background'
 
 function App() {
   const servicesRef = useRef(null);
@@ -39,23 +40,23 @@ function App() {
 
   return (
     <div>
-      <div className='h-screen relative'>
+      <div className='relative min-h-screen w-full'>
         {/* Background Overlay */}
-        <img src={BackgroundImage} className="w-full h-full absolute inset-0 z-0" />
+        <ParticleBackground id="hero-particles" paritcleNumber={120} />
 
         <div className='absolute inset-0 top-10 left-0 z-10 w-[400px] h-[400px]'>
           <img src={UnionBg} alt="" className='' />
         </div>
 
         <div className='z-10'>
-          <Header 
+          <Header
             servicesRef={servicesRef}
             whyRef={whyRef}
             contactRef={contactRef}
           />
 
           <div className='flex items-center justify-center py-36 sora text-3xl md:text-6xl'>
-            <div className='w-full md:w-8/12 lg:w-1/2 space-y-3 text-center'>
+            <div className='w-full lg:w-8/12 lg:w-1/2 space-y-3 text-center'>
 
               <div className='flex items-center justify-center gap-5'>
                 <div className="relative w-[55px] h-[26px]">
@@ -121,7 +122,7 @@ function App() {
 
       {/* Services */}
       <div ref={servicesRef}></div>
-      <section className='px-5 md:px-24 mt-10 md:mt-28 space-y-3'>
+      <section className='px-5 md:px-10 lg:px-24 mt-10 md:mt-28 space-y-3'>
         <h2 className='sora text-xl md:text-4xl'>Our Services</h2>
         <p className="w-full md:w-4/12 md:pr-8 text-sm md:text-base text-tertiary">
           Everything you need to launch, scale, and optimize your digital experience, under one team.
@@ -141,7 +142,7 @@ function App() {
 
       {/* Why Pyrohx */}
       <div ref={whyRef}></div>
-      <section className='px-5 md:px-24 mt-10 md:mt-28 space-y-3'>
+      <section className='px-5 md:px-10 lg:px-24 mt-10 md:mt-28 space-y-3'>
         <h2 className='sora text-xl md:text-4xl'>Why Choose Pyrohx</h2>
         <p className="w-full md:w-4/12 md:pr-8 text-sm md:text-base text-tertiary">
           We focus on results. Better systems, better performance, better growth.
@@ -163,7 +164,7 @@ function App() {
       <section className='px-5 md:px-0 mt-10 md:mt-28 bg-[#FAFAFA]'>
         <div className='flex flex-col items-center justify-center space-y-3 mt-5 md:pt-24 text-center'>
           <h2 className='sora text-xl md:text-4xl'>How We Work</h2>
-          <p className="w-full md:w-4/12 md:pr-8 text-sm md:text-base text-tertiary text-center">
+          <p className="w-full md:w-7/12 lg:w-4/12 lg:pr-8 text-sm md:text-base text-tertiary text-center">
             A clear process that keeps your project organized, fast, and stress-free, from first call to launch.
           </p>
         </div>
@@ -182,8 +183,8 @@ function App() {
         </div>
       </section>
 
-      <section className='relative bg-[var(--secondary-color)] md:p-24 mt-10 md:mt-28 space-y-3'>
-        <img src={BackgroundImage} className="w-full h-full absolute inset-0 z-0" />
+      <section className='relative min-h-screen overflow-hidden bg-[var(--secondary-color)] md:p-5 lg:p-24 mt-10 md:mt-28 space-y-3'>
+        <ParticleBackground id="testimonial-particles" paritcleNumber={200} />
 
         <div className="
           absolute bottom-0 md:-left-50
@@ -197,13 +198,13 @@ function App() {
           overflow-hidden
         "></div>
 
-        <div className='absolute bottom-20 left-20 z-0'>
+        <div className='absolute bottom-130 border lg:bottom-20 lg:left-20 z-0'>
           <img src={UnionBg} alt="" className='' />
         </div>
 
         <div className='relative z-10 mt-10 p-5'>
           <h2 className='sora text-xl md:text-4xl text-white'>Testimonials</h2>
-          <p className="w-full md:w-4/12 text-sm md:text-base text-[#D3D3D3]">
+          <p className="w-full md:w-7/12 lg:w-4/12 text-sm md:text-base text-[#D3D3D3]">
             From startups to service brands, clients choose Pyrohx for clean execution, clear communication, and results that last.
           </p>
 
@@ -247,15 +248,15 @@ function App() {
 
           {/* Contact Us */}
           <div ref={contactRef}></div>
-          <div className='w-full flex flex-col md:flex-row gap-5 my-24 z-10'>
+          <div className='w-full flex flex-col lg:flex-row gap-5 my-24 z-10'>
             <div className='md:w-7/12'>
               <h2 className='sora text-xl md:text-4xl text-white'>Ready to build <br /> something better?</h2>
-              <p className="w-full md:w-4/12 text-sm md:text-base text-[#D3D3D3]">
+              <p className="w-fullmd:w-7/12 lg:w-4/12 text-sm md:text-base text-[#D3D3D3]">
                 Let’s talk about your goals and map out the best digital solution for your brand.
               </p>
             </div>
 
-            <div className='w-full md:w-5/12 flex justify-end bg-[#263F43] text-white border border-[#2C4D53] rounded-xl p-5 md:p-10'>
+            <div className='w-full lg:w-5/12 flex justify-end bg-[#263F43] text-white border border-[#2C4D53] rounded-xl p-5 md:p-10'>
               <form action="" method="post" className='w-full space-y-3'>
                 <TextInput
                   label="Fullname"
