@@ -198,7 +198,7 @@ function App() {
           overflow-hidden
         "></div>
 
-        <div className='absolute bottom-130 border lg:bottom-20 lg:left-20 z-0'>
+        <div className='absolute bottom-130 lg:bottom-20 lg:left-20 z-0'>
           <img src={UnionBg} alt="" className='' />
         </div>
 
@@ -230,7 +230,7 @@ function App() {
               <button
                 type="button"
                 onClick={() => scrollTestimonials('left')}
-                className='flex items-center justify-center w-[56px] h-[56px] bg-[#1F494F] rounded-full cursor-pointer'
+                className='flex items-center justify-center w-[56px] h-[56px] bg-[#1F494F] hover:bg-[var(--primary-color)] rounded-full cursor-pointer'
                 aria-label="Scroll testimonials left"
               >
                 <ArrowLeft />
@@ -238,7 +238,7 @@ function App() {
               <button
                 type="button"
                 onClick={() => scrollTestimonials('right')}
-                className='flex items-center justify-center w-[56px] h-[56px] bg-[#1F494F] rounded-full cursor-pointer'
+                className='flex items-center justify-center w-[56px] h-[56px] bg-[#1F494F] hover:bg-[var(--primary-color)] rounded-full cursor-pointer'
                 aria-label="Scroll testimonials right"
               >
                 <ArrowRight />
