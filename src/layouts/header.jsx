@@ -5,19 +5,19 @@ import { scrollToSection } from "../utils/generic";
 
 const Header = ({ servicesRef, whyRef, contactRef  }) => {
     return (
-        <nav className="relative inset-x-0 z-[50] px-5 md:px-24 mt-5">
+        <nav className="relative inset-x-0 z-[50] px-3 lg:px-24 mt-5">
             <div className="flex items-center justify-between p-2 bg-[var(--tertiary-color)] rounded-full">
                 <div className="flex items-center gap-5">
                     <div className="w-10 md:w-14 h-10 md:h-14 bg-gray-200 rounded-full">
                         <Logo className="w-full h-full object-cover rounded-full" />
                     </div>
-                    <div className="hidden md:flex items-center justify-between">
+                    <div className="hidden lg:flex items-center justify-between">
                         <p onClick={() => scrollToSection(servicesRef)} className="px-6 cursor-pointer">Services</p>
                         <p onClick={() => scrollToSection(whyRef)} className="px-6 cursor-pointer">Why Pyrohx</p>
                         <p onClick={() => scrollToSection(contactRef)} className="px-6 cursor-pointer">Contact</p>
                     </div>
                 </div>
-                <div className="hidden md:flex items-center gap-3">
+                <div className="hidden lg:flex items-center gap-3">
                     <button className="px-6 h-12 flex items-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer">
                         Pay Invoice
                         <ArrowRightUp />
