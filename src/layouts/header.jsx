@@ -1,11 +1,12 @@
 import Logo from "../assets/icons/logo.svg?react";
 import ArrowRightUp from "../assets/icons/arrow-right-up.svg?react";
 import ArrowRight from "../assets/icons/arrow-right.svg?react";
+import { FiMenu } from "react-icons/fi";
 import { scrollToSection } from "../utils/generic";
 
-const Header = ({ servicesRef, whyRef, contactRef  }) => {
+const Header = ({ servicesRef, whyRef, contactRef, toggleSidebar }) => {
     return (
-        <nav className="relative inset-x-0 z-[50] px-3 lg:px-24 mt-5">
+        <nav className="fixed inset-x-0 z-40 px-3 lg:px-24 mt-5">
             <div className="flex items-center justify-between p-2 bg-[var(--tertiary-color)] rounded-full">
                 <div className="flex items-center gap-5">
                     <div className="w-10 md:w-14 h-10 md:h-14 bg-gray-200 rounded-full">
@@ -28,6 +29,9 @@ const Header = ({ servicesRef, whyRef, contactRef  }) => {
                             <ArrowRight />
                         </span>
                     </button>
+                </div>
+                <div onClick={toggleSidebar} className="lg:hidden px-3">
+                    <FiMenu className="text-2xl text-primary" />
                 </div>
             </div>
         </nav>

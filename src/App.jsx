@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './layouts/header'
 import Footer from './layouts/footer'
+import Sidebar from './layouts/sidebar'
 import Asterik from './assets/icons/asterisk.svg?react';
 import ServiceCard from './components/ui/service-card'
 import dataModel from './dataModel.json';
@@ -27,6 +28,17 @@ function App() {
   const whyRef = useRef(null);
   const contactRef = useRef(null);
 
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
   const testimonialRef = useRef(null);
   const scrollTestimonials = (direction) => {
     const container = testimonialRef.current;
@@ -40,6 +52,14 @@ function App() {
 
   return (
     <div>
+      <Sidebar
+        servicesRef={servicesRef}
+        whyRef={whyRef}
+        contactRef={contactRef}
+        isOpen={sidebarOpen}
+        closeSidebar={closeSidebar}
+      />
+
       <div className='relative h-screen w-full'>
         {/* Background Overlay */}
         <ParticleBackground id="hero-particles" paritcleNumber={120} />
@@ -53,6 +73,7 @@ function App() {
             servicesRef={servicesRef}
             whyRef={whyRef}
             contactRef={contactRef}
+            toggleSidebar={toggleSidebar}
           />
 
           <div className='w-full h-full flex items-center justify-center sora text-3xl md:text-6xl'>
