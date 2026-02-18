@@ -89,8 +89,9 @@ function Main() {
                                     <span className='absolute -top-1 -left-1 w-3 h-3 bg-white border-primary'></span>
                                     <span className='absolute -top-1 -right-1 w-3 h-3 bg-white border-primary'></span>
                                     <div className="p-3 border border-primary font-semibold text-3xl md:text-6xl
-                  bg-gradient-to-b from-[#00CA99] to-[#0CDEAB] 
-                  bg-clip-text text-transparent">
+                                        bg-gradient-to-b from-[#00CA99] to-[#0CDEAB] 
+                                        bg-clip-text text-transparent"
+                                    >
                                         Real Growth
                                     </div>
 
@@ -118,7 +119,7 @@ function Main() {
             </div>
 
             {/* Middle Banner */}
-            <div className='flex items-center justify-center gap-5 px-5 md:px-20 h-16 bg-[var(--secondary-color)] text-white overflow-auto'>
+            <div className='flex items-center md:justify-center gap-5 px-5 md:px-20 h-16 bg-[var(--secondary-color)] text-white overflow-x-auto'>
                 <div className='flex flex-shrink-0 items-center gap-4'>
                     <Asterik />
                     <p>99% Client Satisfaction </p>
@@ -157,7 +158,7 @@ function Main() {
 
             {/* Why Pyrohx */}
             <div ref={whyRef}></div>
-            <section className='px-5 md:px-10 lg:px-24 mt-10 md:mt-28 space-y-3'>
+            <section className='px-5 md:px-10 lg:px-24 mt-15 md:mt-28 space-y-3'>
                 <h2 className='sora text-xl md:text-4xl'>Why Choose Pyrohx</h2>
                 <p className="w-full md:w-4/12 md:pr-8 text-sm md:text-base text-tertiary">
                     We focus on results. Better systems, better performance, better growth.
@@ -176,7 +177,7 @@ function Main() {
             </section>
 
             {/* About Us */}
-            <section className='px-5 md:px-0 mt-10 md:mt-28 bg-[#FAFAFA]'>
+            <section className='px-5 md:px-0 mt-28 bg-[#FAFAFA]'>
                 <div className='flex flex-col items-center justify-center space-y-3 mt-5 md:pt-24 text-center'>
                     <h2 className='sora text-xl md:text-4xl'>How We Work</h2>
                     <p className="w-full md:w-7/12 lg:w-4/12 lg:pr-8 text-sm md:text-base text-tertiary text-center">
@@ -202,16 +203,17 @@ function Main() {
                 <ParticleBackground id="testimonial-particles" paritcleNumber={200} />
 
                 <div className="
-          absolute bottom-0 md:-left-50
-          md:w-8/12 md:h-[130vh]
-          rounded-full
-          border-[70px] border-[var(--primary-color)]
-          blur-2xl
-          opacity-30
-          z-0
-          pointer-events-none
-          overflow-hidden
-        "></div>
+                    absolute bottom-0 md:-left-50
+                    hidden md:block
+                    md:w-8/12 md:h-[130vh]
+                    rounded-full
+                    border-[70px] border-[var(--primary-color)]
+                    blur-2xl
+                    opacity-30
+                    z-0
+                    pointer-events-none
+                    overflow-hidden
+                "></div>
 
                 <div className='absolute bottom-130 lg:bottom-20 lg:left-20 z-0'>
                     <img src={UnionBg} alt="" className='' />
