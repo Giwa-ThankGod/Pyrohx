@@ -2,7 +2,10 @@ import Logo from "../assets/icons/logo.svg?react";
 import Instagram from "../assets/icons/instagram.svg?react";
 import Tiktok from "../assets/icons/tiktok.svg?react";
 
-const Footer = () => {
+import { payInvoice } from "../helpers/generic";
+import { scrollToSection } from "../utils/generic";
+
+const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
     return (
         <div className="px-5 md:px-10 lg:px-24 mt-5 md:mt-10 p-5 md:p-0">
             <div className="flex items-center gap-5 py-5">
@@ -29,10 +32,10 @@ const Footer = () => {
                 <div className="w-full lg:w-1/2 flex items-start justify-between lg:justify-center md:gap-24">
                     <div className="space-y-2">
                         <h3 className="font-semibold">Quick Links</h3>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Services</a>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Why Pyrohx</a>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">How we Work</a>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Pay Invoice</a>
+                        <button type="button" onClick={() => scrollToSection(servicesRef)} className="block text-sm md:text-base text-tertiary hover:underline">Services</button>
+                        <button type="button" onClick={() => scrollToSection(whyRef)} className="block text-sm md:text-base text-tertiary hover:underline">Why Pyrohx</button>
+                        <button type="button" onClick={() => scrollToSection(howRef)} className="block text-sm md:text-base text-tertiary hover:underline">How we Work</button>
+                        <a href="" onClick={payInvoice} className="block text-sm md:text-base text-tertiary hover:underline">Pay Invoice</a>
                     </div>
                     <div className="space-y-2">
                         <h3 className="font-semibold">Services</h3>
@@ -43,8 +46,8 @@ const Footer = () => {
                     </div>
                     <div className="space-y-2">
                         <h3 className="font-semibold">Company</h3>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">About</a>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Contact</a>
+                        <button type="button" onClick={() => scrollToSection(howRef)} className="block text-sm md:text-base text-tertiary hover:underline">About</button>
+                        <button type="button" onClick={() => scrollToSection(contactRef)} className="block text-sm md:text-base text-tertiary hover:underline">Contact</button>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Login</a>
                     </div>
                 </div>

@@ -22,6 +22,7 @@ import ParticleBackground from '../components/ui/particle-background';
 function Main() {
     const servicesRef = useRef(null);
     const whyRef = useRef(null);
+    const howRef = useRef(null);
     const contactRef = useRef(null);
 
     const testimonialRef = useRef(null);
@@ -177,6 +178,7 @@ function Main() {
             </section>
 
             {/* About Us */}
+            <div ref={howRef}></div>
             <section className='px-5 md:px-0 mt-28 bg-[#FAFAFA]'>
                 <div className='flex flex-col items-center justify-center space-y-3 mt-5 md:pt-24 text-center'>
                     <h2 className='sora text-xl md:text-4xl'>How We Work</h2>
@@ -312,7 +314,12 @@ function Main() {
 
             </section>
 
-            <Footer />
+            <Footer 
+                servicesRef={servicesRef}
+                whyRef={whyRef}
+                howRef={howRef}
+                contactRef={contactRef}
+            />
         </div>
     )
 }
