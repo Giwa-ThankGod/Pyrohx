@@ -3,6 +3,8 @@ import React from "react";
 import Logo from "../assets/icons/logo.svg?react";
 import ArrowRightUp from "../assets/icons/arrow-right-up.svg?react";
 import ArrowRight from "../assets/icons/arrow-right.svg?react";
+
+import { payInvoice } from "../helpers/generic";
 import { scrollToSection } from "../utils/generic";
 
 import { MdClose } from "react-icons/md";
@@ -55,7 +57,10 @@ const Sidebar = ({ isOpen, closeSidebar, servicesRef, whyRef, contactRef }) => {
                         </div>
 
                         <div className="sidebar-item space-y-3">
-                            <button className="sidebar-button w-full px-6 h-12 flex items-center justify-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer">
+                            <button 
+                                onClick={payInvoice}
+                                className="sidebar-button w-full px-6 h-12 flex items-center justify-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer"
+                            >
                                 Pay Invoice
                                 <ArrowRightUp />
                             </button>
