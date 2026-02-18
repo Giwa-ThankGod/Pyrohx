@@ -22,7 +22,7 @@ const HowCard = ({ icon, index, title, description, stackIndex }) => {
     >
       <div className="flex flex-col md:flex-row items-center justify-between py-10 px-5 md:px-10 lg:px-24 bg-[#FAFAFA] border-b-2 border-[var(--tertiary-color)]">
         <div className="w-full flex flex-col md:flex-row items-center md:gap-3 lg:gap-10">
-          <h2 className="text-xl md:text-4xl lg:text-6xl text-[var(--tertiary-color)] font-medium">
+          <h2 className="text-4xl lg:text-6xl text-[var(--tertiary-color)] font-medium">
             {index}
           </h2>
 

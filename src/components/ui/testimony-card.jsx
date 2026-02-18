@@ -11,7 +11,7 @@ const TestimonyCard = ({ name, feedback, photo }) => {
                 <Quote />
             </div>
 
-            <p className='text-white'>"{feedback}"</p>
+            <p className='text-sm md:text-base text-white'>"{feedback}"</p>
 
             <div className="flex items-center gap-2">
                 <div className='w-[32px] h-[32px] bg-gray-200 rounded-full'>
