@@ -2,6 +2,8 @@ import Logo from "../assets/icons/logo.svg?react";
 import ArrowRightUp from "../assets/icons/arrow-right-up.svg?react";
 import ArrowRight from "../assets/icons/arrow-right.svg?react";
 import { FiMenu } from "react-icons/fi";
+
+import { payInvoice } from "../helpers/generic";
 import { scrollToSection } from "../utils/generic";
 
 const Header = ({ servicesRef, whyRef, contactRef, toggleSidebar }) => {
@@ -19,7 +21,10 @@ const Header = ({ servicesRef, whyRef, contactRef, toggleSidebar }) => {
                     </div>
                 </div>
                 <div className="hidden lg:flex items-center gap-3">
-                    <button className="px-6 h-12 flex items-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer">
+                    <button
+                        onClick={payInvoice}
+                        className="px-6 h-12 flex items-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer"
+                    >
                         Pay Invoice
                         <ArrowRightUp />
                     </button>
