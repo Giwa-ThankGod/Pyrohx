@@ -10,14 +10,17 @@ import WhyCard from '../components/ui/why-card';
 import HowCard from '../components/ui/how-card';
 
 import UnionBg from '../assets/images/union.png';
-import TextInput from '../components/forms/text-input';
-import TextArea from '../components/forms/text-area';
+import img2 from '../assets/images/img2.png';
+import img3 from '../assets/images/img3.png';
+import img4 from '../assets/images/img4.png';
+
 import TestimonyCard from '../components/ui/testimony-card';
+import ParticleBackground from '../components/ui/particle-background';
+import ContactForm from '../components/common/contact-us';
 
 import ArrowLeft from '../assets/icons/arrow-left-1.svg?react';
 import ArrowRight from '../assets/icons/arrow-right-1.svg?react';
 import { scrollToSection } from '../utils/generic';
-import ParticleBackground from '../components/ui/particle-background';
 
 function Main() {
     const servicesRef = useRef(null);
@@ -76,9 +79,15 @@ function Main() {
 
                             <div className='flex items-center justify-center gap-5'>
                                 <div className="relative w-[55px] h-[26px]">
-                                    <div className="absolute w-7 h-7 border-2 border-white rounded-full bg-red-500 left-0 top-0"></div>
-                                    <div className="absolute w-7 h-7 border-2 border-white rounded-full bg-green-500 left-[18px] top-0"></div>
-                                    <div className="absolute w-7 h-7 border-2 border-white rounded-full bg-blue-500 left-[36px] top-0"></div>
+                                    <div className="absolute w-8 h-8 border-2 border-white rounded-full left-0 top-0">
+                                        <img src={img2} alt="photo1" className='w-full h-full object-cover rounded-full' />
+                                    </div>
+                                    <div className="absolute w-8 h-8 border-2 border-white rounded-full left-[18px] top-0">
+                                        <img src={img3} alt="photo2" className='w-full h-full object-cover rounded-full' />
+                                    </div>
+                                    <div className="absolute w-8 h-8 border-2 border-white rounded-full left-[36px] top-0">
+                                        <img src={img4} alt="photo3" className='w-full h-full object-cover rounded-full' />
+                                    </div>
                                 </div>
                                 <p className='text-sm md:text-base'>Trusted by 5+ happy clients</p>
                             </div>
@@ -107,10 +116,10 @@ function Main() {
 
                             {/* Action Buttons */}
                             <div className="flex flex-wrap items-center justify-center gap-3 px-5 md:px-0 text-sm md:text-base">
-                                <button className="w-full md:w-auto px-6 h-12 flex items-center justify-center gap-2 glow-button text-white rounded-full cursor-pointer">
+                                <button className="w-full md:w-auto px-6 h-14 flex items-center justify-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white shadow-[0_6px_20px_rgba(46,255,162,0.35)] rounded-full cursor-pointer">
                                     Schedule a Call
                                 </button>
-                                <button onClick={() => scrollToSection(servicesRef)} className="w-full md:w-auto px-6 h-12 flex items-center justify-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer">
+                                <button onClick={() => scrollToSection(servicesRef)} className="w-full md:w-auto px-6 h-14 flex items-center justify-center gap-2 hover:opacity-80 border-2 border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer">
                                     Explore Services
                                 </button>
                             </div>
@@ -179,7 +188,7 @@ function Main() {
 
             {/* About Us */}
             <div ref={howRef}></div>
-            <section className='px-5 md:px-0 mt-28 bg-[#FAFAFA]'>
+            <section className='px-5 md:px-0 pb-10 md:pb-28 mt-28 bg-[#FAFAFA]'>
                 <div className='flex flex-col items-center justify-center space-y-3 mt-5 md:pt-24 text-center'>
                     <h2 className='sora text-xl md:text-4xl'>How We Work</h2>
                     <p className="w-full md:w-7/12 lg:w-4/12 lg:pr-8 text-sm md:text-base text-tertiary text-center">
@@ -201,17 +210,20 @@ function Main() {
                 </div>
             </section>
 
-            <section className='relative min-h-screen overflow-hidden bg-[var(--secondary-color)] md:p-5 lg:p-24 mt-10 md:mt-28 space-y-3'>
+            <section className='relative md:min-h-screen overflow-hidden bg-[var(--secondary-color)] md:p-5 lg:p-24 space-y-3'>
                 <ParticleBackground id="testimonial-particles" paritcleNumber={200} />
 
                 <div className="
-                    absolute bottom-0 md:-left-50
+                    absolute 
+                    md:-bottom-50 md:-left-50
+                    lg:-bottom-100 lg:-left-100
                     hidden md:block
-                    md:w-8/12 md:h-[130vh]
+                    md:w-8/12 lg:w-10/12 
+                    md:h-[90vh] lg:h-[190vh]
                     rounded-full
                     border-[70px] border-[var(--primary-color)]
-                    blur-2xl
-                    opacity-30
+                    blur-3xl
+                    opacity-20
                     z-0
                     pointer-events-none
                     overflow-hidden
@@ -275,40 +287,7 @@ function Main() {
                             </p>
                         </div>
 
-                        <div className='w-full lg:w-5/12 flex justify-end bg-[#263F43] text-white border border-[#2C4D53] rounded-xl p-5 md:p-10'>
-                            <form action="" method="post" className='w-full space-y-3'>
-                                <TextInput
-                                    label="Fullname"
-                                    name="fullname"
-                                    placeholder='John Doe'
-                                />
-                                <TextInput
-                                    label="Email"
-                                    name="email"
-                                    type='email'
-                                    placeholder='john.doe@example.com'
-                                />
-                                <TextInput
-                                    label="Company name"
-                                    name="company"
-                                    placeholder='Figma'
-                                />
-                                <TextArea
-                                    label="Message"
-                                    name="message"
-                                />
-
-                                {/* Action Buttons */}
-                                <div className="flex flex-wrap items-center gap-3 text-sm md:text-base">
-                                    <button className="w-full md:w-auto px-6 h-12 flex items-center justify-center gap-2 text-white bg-[var(--primary-color)] border border-gray-500 rounded-full cursor-pointer">
-                                        Send a message
-                                    </button>
-                                    <button className="w-full md:w-auto px-6 h-12 flex items-center justify-center gap-2 text-[var(--primary-color)] border border-[var(--primary-color)] rounded-full cursor-pointer">
-                                        Schedule a Call
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        <ContactForm />
                     </div>
                 </div>
 
