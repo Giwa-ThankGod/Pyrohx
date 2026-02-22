@@ -9,7 +9,7 @@ const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
     return (
         <div className="px-5 md:px-10 lg:px-24 mt-5 md:mt-10 p-5 md:p-0">
             <div className="flex items-center gap-5 py-5">
-                <div className="w-10 md:w-14 h-10 md:h-14 bg-gray-200 rounded-full">
+                <div className="w-10 md:w-14 h-10 md:h-14 bg-white rounded-full">
                     <Logo className="w-full h-full object-center rounded-full" />
                 </div>
                 <p className="text-2xl md:text-4xl font-semibold">
@@ -48,12 +48,12 @@ const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
                         <h3 className="font-semibold">Company</h3>
                         <button type="button" onClick={() => scrollToSection(howRef)} className="block text-sm md:text-base text-tertiary hover:underline">About</button>
                         <button type="button" onClick={() => scrollToSection(contactRef)} className="block text-sm md:text-base text-tertiary hover:underline">Contact</button>
-                        <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Login</a>
+                        {/* <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Login</a> */}
                     </div>
                 </div>
             </div>
 
-            <p className="my-8 text-sm md:text-base text-tertiary">© 2026 Pyrohx. All rights reserved.</p>
+            <p className="my-8 text-sm md:text-base text-tertiary">© {new Date().getFullYear()} Pyrohx. All rights reserved.</p>
         </div>
     )
 };
