@@ -1,9 +1,9 @@
-import Design from '../../assets/images/design_img.png';
-import Website from '../../assets/images/web_img.png';
-import Mobile from '../../assets/images/mobile_img.png';
-import AI from '../../assets/images/ai_img.png';
-import System from '../../assets/images/system_img.png';
-import SEO from '../../assets/images/seo_img.png';
+import Design from '../../assets/images/design_img.jpeg';
+import Website from '../../assets/images/web_img.jpeg';
+import Mobile from '../../assets/images/mobile_img.jpeg';
+import AI from '../../assets/images/ai_img.jpeg';
+import System from '../../assets/images/system_img.jpeg';
+import SEO from '../../assets/images/seo_img.jpeg';
 
 const thuMapper = {
     design: Design,
