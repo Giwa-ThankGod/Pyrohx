@@ -4,6 +4,7 @@ import Tiktok from "../assets/icons/tiktok.svg?react";
 
 import { payInvoice } from "../helpers/generic";
 import { scrollToSection } from "../utils/generic";
+import { INSTAGRAM_LINK, TIKTOK_LINK } from "@/config";
 
 const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
     return (
@@ -24,8 +25,12 @@ const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
                         To help businesses grow with smart digital solutions to improve user experience, connect systems, and use AI to work smarter.
                     </p>
                     <div className="flex items-center gap-4">
-                        <Instagram className="text-tertiary hover:!text-[var(--primary-color)] cursor-pointer" />
-                        <Tiktok className="text-tertiary hover:!text-[var(--primary-color)] cursor-pointer" />
+                        <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
+                            <Instagram className="text-tertiary hover:!text-[var(--primary-color)] cursor-pointer" />
+                        </a>
+                        <a href={TIKTOK_LINK} target="_blank" rel="noopener noreferrer">
+                            <Tiktok className="text-tertiary hover:!text-[var(--primary-color)] cursor-pointer" />
+                        </a>
                     </div>
                 </div>
 
