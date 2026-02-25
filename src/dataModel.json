@@ -78,26 +78,20 @@
         {
             "name": "Jason Miller",
             "position": "CEO, Tech Innovators",
-            "photo": "alice_johnson",
+            "photo": "img1",
             "feedback": "Pyrohx built us a modern website that loads fast and looks incredible. The process was smooth, and we started getting more qualified leads within weeks."
         },
         {
             "name": "Ethan Brooks",
             "position": "Founder, Startup Hub",
-            "photo": "michael_smith",
+            "photo": "img4",
             "feedback": "We needed multiple tools to work together, and Pyrohx handled the integrations perfectly. Everything is automated now, and our team saves hours every week."
         },
         {
             "name": "Melissa Grant",
             "position": "Marketing Director, Creative Solutions",
-            "photo": "sofia_martinez",
+            "photo": "img3",
             "feedback": "Pyrohx improved our SEO and helped us rank higher for the searches that matter. We’re getting more traffic, more calls, and better leads overall. We definitely recommend!"
-        },
-        {
-            "name": "Grant Gustin",
-            "position": "CEO, Tech Innovators",
-            "photo": "alice_johnson",
-            "feedback": "Pyrohx built us a modern website that loads fast and looks incredible. The process was smooth, and we started getting more qualified leads within weeks."
         }
     ]
 }

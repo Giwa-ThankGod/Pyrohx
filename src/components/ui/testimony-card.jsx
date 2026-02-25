@@ -1,6 +1,16 @@
 import Star from '../../assets/icons/star.svg?react';
 import Quote from '../../assets/icons/quote.svg?react';
 import img1 from '../../assets/images/img1.png';
+import img2 from '../../assets/images/img2.png';
+import img3 from '../../assets/images/img3.png';
+import img4 from '../../assets/images/img4.png';
+
+const ImageMap = {
+    img1,
+    img2,
+    img3,
+    img4
+};
 
 const TestimonyCard = ({ name, feedback, photo }) => {
     return (
@@ -16,7 +26,7 @@ const TestimonyCard = ({ name, feedback, photo }) => {
 
             <div className="flex items-center gap-2">
                 <div className='w-[32px] h-[32px] bg-gray-200 rounded-full'>
-                    <img src={img1} alt="photo" className='w-full h-full object-cover rounded-full' />
+                    <img src={ImageMap[photo]} alt="photo" className='w-full h-full object-cover rounded-full' />
                 </div>
                 <p className="text-white">{name}</p>
             </div>
