@@ -20,7 +20,7 @@ const TextArea = ({
         name={name}
         placeholder={placeholder}
         rows={rows}
-        className={`w-full mt-1 px-5 py-3 text-sm text-white font-light bg-[#0B353B] border border-[#2C4D53] focus:outline-none rounded-lg ${className}`}
+        className={`w-full mt-1 px-5 py-3 text-sm font-light bg-[#FAFAFA] border border-[#EEEEEE] focus:outline-none rounded-lg ${className}`}
         {...rest}
       />
 

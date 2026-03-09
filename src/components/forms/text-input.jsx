@@ -20,7 +20,7 @@ const TextInput = ({
         name={name}
         id={name}
         placeholder={placeholder}
-        className={`w-full h-12 mt-1 px-5 text-white font-light bg-[#0B353B] border border-[#2C4D53] focus:outline-none rounded-lg ${className}`}
+        className={`w-full h-11 mt-1 px-5 text-sm font-light bg-[#FAFAFA] border border-[#EEEEEE] focus:outline-none rounded-lg ${className}`}
         {...rest}
       />
 

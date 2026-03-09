@@ -7,27 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-type SelectOption = {
-  label: string;
-  value: string;
-};
-
-type SelectInputProps = {
-  label: string;
-  name: string;
-  value?: string;
-  onChange: (event: {
-    target: {
-      name: string;
-      value: string;
-    };
-  }) => void;
-  options?: SelectOption[];
-  placeholder?: string;
-  className?: string;
-};
-
-const SelectInput: React.FC<SelectInputProps> = ({
+const SelectInput = ({
   label,
   name,
   value,
@@ -44,17 +24,17 @@ const SelectInput: React.FC<SelectInputProps> = ({
 
       <Select
         value={value}
-        onValueChange={(val: string) =>
+        onValueChange={(val) =>
           onChange({ target: { name, value: val } })
         }
       >
         <SelectTrigger
-          className={`w-full !h-12 mt-1 px-5 font-light border border-gray-200 cursor-pointer focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-xl shadow-none ${className}`}
+          className={`w-full !h-11 mt-1 px-5 font-light bg-[#FAFAFA] border border-[#EEEEEE] cursor-pointer focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-lg shadow-none ${className}`}
         >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
 
-        <SelectContent className="bg-white font-light border border-gray-200">
+        <SelectContent className="bg-white font-light border border-[#EEEEEE]">
           {options.map((opt) => (
             <SelectItem key={opt.value} value={opt.value}>
               {opt.label}
