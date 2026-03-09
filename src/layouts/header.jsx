@@ -5,8 +5,11 @@ import { FiMenu } from "react-icons/fi";
 
 import { payInvoice } from "../helpers/generic";
 import { scrollToSection } from "../utils/generic";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ servicesRef, whyRef, contactRef, toggleSidebar }) => {
+    const navigate = useNavigate();
+
     return (
         <nav className="fixed inset-x-0 z-40 px-3 lg:px-24 mt-5">
             <div className="flex items-center justify-between p-2 bg-[var(--tertiary-color)] rounded-full">
@@ -28,7 +31,10 @@ const Header = ({ servicesRef, whyRef, contactRef, toggleSidebar }) => {
                         Pay Invoice
                         <ArrowRightUp />
                     </button>
-                    <button className="px-6 h-13 flex items-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white rounded-full cursor-pointer">
+                    <button
+                        onClick={() => navigate("/schedule-call")}
+                        className="px-6 h-13 flex items-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white rounded-full cursor-pointer"
+                    >
                         Schedule a Call
                         <span className="flex items-center justify-center p-1 bg-white rounded-full">
                             <ArrowRight />

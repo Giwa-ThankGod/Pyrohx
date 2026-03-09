@@ -8,8 +8,11 @@ import { payInvoice } from "../helpers/generic";
 import { scrollToSection } from "../utils/generic";
 
 import { MdClose } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isOpen, closeSidebar, servicesRef, whyRef, contactRef }) => {
+    const navigate = useNavigate();
+    
     if (!isOpen) return null;
 
     const navRoute = (ref) => {
@@ -57,14 +60,17 @@ const Sidebar = ({ isOpen, closeSidebar, servicesRef, whyRef, contactRef }) => {
                         </div>
 
                         <div className="sidebar-item space-y-3">
-                            <button 
+                            <button
                                 onClick={payInvoice}
                                 className="sidebar-button w-full px-6 h-12 flex items-center justify-center gap-2 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-full cursor-pointer"
                             >
                                 Pay Invoice
                                 <ArrowRightUp />
                             </button>
-                            <button className="sidebar-button w-full px-6 h-12 flex items-center justify-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white rounded-full cursor-pointer">
+                            <button
+                                onClick={() => navigate("/schedule-call")}
+                                className="sidebar-button w-full px-6 h-12 flex items-center justify-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white rounded-full cursor-pointer"
+                            >
                                 Schedule a Call
                                 <span className="flex items-center justify-center p-1 bg-white rounded-full">
                                     <ArrowRight />
