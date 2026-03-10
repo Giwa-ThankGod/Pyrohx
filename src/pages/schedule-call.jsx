@@ -104,7 +104,7 @@ function ScheduleCall() {
             const data = await res.json();
 
             if (!res.ok) {
-                throw new Error(data.message || "Something went wrong");
+                throw new Error(data.error || "Something went wrong");
             }
 
             setFormData(INITIAL_DATA);
@@ -258,8 +258,8 @@ function ScheduleCall() {
             <ActionModal
                 isOpen={isOpen}
                 onClose={setIsOpen}
-                title="Call Request Sent Successfully"
-                description="Thank you for your submission. We'll get back to you within 24 hours."
+                title="Request Received"
+                description="We'll respond as soon as we are able."
                 buttonCloseText="Close"
             />
         </section>
