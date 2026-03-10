@@ -86,8 +86,10 @@ function ContactForm() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
+            const data = await res.json();
+
             if (!res.ok) {
-                throw new Error(data.message || "Something went wrong");
+                throw new Error(data.error || "Something went wrong");
             }
 
             setFormData({ fullname: "", email: "", company: "", message: "" });
@@ -154,7 +156,7 @@ function ContactForm() {
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-3 text-sm md:text-base">
                     <button
-                        // disabled={isDisabled}
+                        disabled={isDisabled}
                         className="w-full md:w-auto px-6 h-12 flex items-center justify-center gap-2 text-white bg-[var(--primary-color)] border border-gray-500 rounded-full cursor-pointer"
                     >
                         {isSubmitting ? (
