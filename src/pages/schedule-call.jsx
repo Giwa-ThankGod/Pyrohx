@@ -49,6 +49,10 @@ function ScheduleCall() {
             newErrors.email = "Enter a valid email address";
         }
 
+        if (!formData.company_name) {
+            newErrors.company_name = "Company name is required";
+        }
+        
         if (!formData.service) {
             newErrors.service = "Select a service";
         }
