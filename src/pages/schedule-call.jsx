@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Footer from "@/layouts/footer";
 import ActionModal from "@/components/common/action-modal";
@@ -17,6 +18,8 @@ import { Loader } from "lucide-react";
 import ScheduleCallImage from "@/assets/images/schedule_call_img.png";
 
 const BASEURL = import.meta.env.VITE_BASE_URL;
+const SITEKEY = import.meta.env.VITE_SITE_KEY;
+
 const INITIAL_DATA = {
         fullname: "",
         email: "",
@@ -30,8 +33,10 @@ const INITIAL_DATA = {
     }
 
 function ScheduleCall() {
+    const recaptchaRef = useRef(null);
     const [formData, setFormData] = useState(INITIAL_DATA);
     const [errors, setErrors] = useState({});
+    const [captchaToken, setCaptchaToken] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [serverMessage, setServerMessage] = useState("");
@@ -73,6 +78,10 @@ function ScheduleCall() {
             newErrors.description = "Project goals are required";
         }
 
+        if (!captchaToken) {
+            newErrors.captcha = "Please verify you are human";
+        }
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -90,6 +99,11 @@ function ScheduleCall() {
         }));
     };
 
+    const handleCaptchaChange = (token) => {
+        setCaptchaToken(token);
+        setErrors((prev) => ({ ...prev, captcha: "" }));
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setServerMessage("");
@@ -99,10 +113,15 @@ function ScheduleCall() {
         try {
             setIsSubmitting(true);
 
+            const payload = {
+                ...formData,
+                recaptchaToken: captchaToken,
+            };
+
             const res = await fetch(`${BASEURL}/schedule-call`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(payload),
             });
 
             const data = await res.json();
@@ -113,6 +132,8 @@ function ScheduleCall() {
 
             setFormData(INITIAL_DATA);
             setErrors({});
+            setCaptchaToken(null);
+            recaptchaRef.current?.reset();
             setIsOpen(true);
         } catch (err) {
             setServerMessage(err.message);
@@ -120,6 +141,8 @@ function ScheduleCall() {
             setIsSubmitting(false);
         }
     };
+
+    const isDisabled = isSubmitting || !captchaToken;
 
     return (
         <section className="bg-[#FAFAFA]">
@@ -145,7 +168,7 @@ function ScheduleCall() {
 
                 <div className="relative z-20 -mt-16 md:-mt-10 w-full px-5 md:px-10 lg:px-24">
                     <form onSubmit={handleSubmit} method="post" className="space-y-4 bg-white rounded-xl" noValidate>
-                        <div className="space-y-3 bg-white p-5 md:p-10 rounded-xl">
+                        <div className="space-y-3 bg-white px-5 md:px-10 pt-5 md:pt-10 rounded-xl">
                             <h4 className="text-[#777777] capitalize">BASIC DETAILS</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <TextInput
@@ -184,7 +207,7 @@ function ScheduleCall() {
                             </div>
                         </div>
 
-                        <div className="space-y-3 bg-white p-5 md:p-10 rounded-xl">
+                        <div className="space-y-3 bg-white px-5 md:px-10 py-5 rounded-xl">
                             <h4 className="text-[#777777] capitalize">PROJECT CONTEXT</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <SelectInput
@@ -226,7 +249,7 @@ function ScheduleCall() {
                             </div>
                         </div>
 
-                        <div className="space-y-3 bg-white p-5 md:p-10 rounded-xl">
+                        <div className="space-y-3 bg-white px-5 md:px-10 rounded-xl">
                             <h4 className="text-[#777777] capitalize">PROJECT OVERVIEW</h4>
                             <TextArea
                                 label="Describe Your Goals"
@@ -238,14 +261,27 @@ function ScheduleCall() {
                             />
                         </div>
 
+                        <div className="px-5 md:px-10 flex flex-col items-center md:justify-center">
+                            <ReCAPTCHA
+                                size="normal"
+                                onChange={handleCaptchaChange}
+                                sitekey={SITEKEY}
+                                ref={recaptchaRef}
+                            />
+                            {errors.captcha && (
+                                <p className="mt-2 text-sm text-red-500">{errors.captcha}</p>
+                            )}
+                        </div>
+
                         {serverMessage && (
-                            <p className="text-sm text-red-500">{serverMessage}</p>
+                            <p className="px-5 md:px-10 text-sm text-red-500">{serverMessage}</p>
                         )}
 
                         <div className="flex flex-col items-center justify-center gap-2 pb-10">
                             <button
                                 type="submit"
-                                className="px-12 h-13 min-h-12 flex items-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white rounded-full cursor-pointer"
+                                disabled={isDisabled}
+                                className="px-12 h-13 min-h-12 flex items-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 disabled:opacity-60 border-2 border-gray-300 text-white rounded-full cursor-pointer disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? (
                                     <Loader rotate={360} className="text-xl animate-spin mx-auto" />
