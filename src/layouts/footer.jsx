@@ -5,11 +5,14 @@ import Tiktok from "../assets/icons/tiktok.svg?react";
 import { payInvoice } from "../helpers/generic";
 import { scrollToSection } from "../utils/generic";
 import { INSTAGRAM_LINK, TIKTOK_LINK } from "@/config";
+import { useNavigate } from "react-router-dom";
 
 const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
+    const navigate = useNavigate();
+
     return (
         <div className="px-5 md:px-10 lg:px-24 mt-5 md:mt-10 p-5 md:p-0">
-            <div className="flex items-center gap-5 py-5">
+            <div onClick={()=> navigate("/")} className="flex items-center gap-2 md:gap-5 py-5 cursor-pointer">
                 <div className="w-10 md:w-14 h-10 md:h-14 bg-white rounded-full">
                     <Logo className="w-full h-full object-center rounded-full" />
                 </div>
@@ -36,21 +39,21 @@ const Footer = ({ servicesRef, whyRef, howRef, contactRef }) => {
 
                 <div className="w-full lg:w-1/2 flex items-start justify-between lg:justify-center md:gap-24">
                     <div className="space-y-2">
-                        <h3 className="font-semibold">Quick Links</h3>
+                        <h3 className="text-sm md:text-base font-semibold">Quick Links</h3>
                         <button type="button" onClick={() => scrollToSection(servicesRef)} className="block text-sm md:text-base text-tertiary hover:underline">Services</button>
                         <button type="button" onClick={() => scrollToSection(whyRef)} className="block text-sm md:text-base text-tertiary hover:underline">Why Pyrohx</button>
                         <button type="button" onClick={() => scrollToSection(howRef)} className="block text-sm md:text-base text-tertiary hover:underline">How we Work</button>
                         <a href="" onClick={payInvoice} className="block text-sm md:text-base text-tertiary hover:underline">Pay Invoice</a>
                     </div>
                     <div className="space-y-2">
-                        <h3 className="font-semibold">Services</h3>
+                        <h3 className="text-sm md:text-base font-semibold">Services</h3>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Web Development</a>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">System Integration</a>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">AI Integration</a>
                         <a href="" className="block text-sm md:text-base text-tertiary hover:underline">SEO Optimization</a>
                     </div>
                     <div className="space-y-2">
-                        <h3 className="font-semibold">Company</h3>
+                        <h3 className="text-sm md:text-base font-semibold">Company</h3>
                         <button type="button" onClick={() => scrollToSection(howRef)} className="block text-sm md:text-base text-tertiary hover:underline">About</button>
                         <button type="button" onClick={() => scrollToSection(contactRef)} className="block text-sm md:text-base text-tertiary hover:underline">Contact</button>
                         {/* <a href="" className="block text-sm md:text-base text-tertiary hover:underline">Login</a> */}

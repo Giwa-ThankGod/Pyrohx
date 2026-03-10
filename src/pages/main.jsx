@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Header from '../layouts/header';
 import Footer from '../layouts/footer';
@@ -23,6 +24,8 @@ import ArrowRight from '../assets/icons/arrow-right-1.svg?react';
 import { scrollToSection } from '../utils/generic';
 
 function Main() {
+    const navigate = useNavigate();
+
     const servicesRef = useRef(null);
     const whyRef = useRef(null);
     const howRef = useRef(null);
@@ -115,7 +118,7 @@ function Main() {
                             </p>
 
                             {/* Action Buttons */}
-                            <div className="flex flex-wrap items-center justify-center gap-3 px-5 md:px-0 text-sm md:text-base">
+                            <div onClick={()=> navigate("/schedule-call")} className="flex flex-wrap items-center justify-center gap-3 px-5 md:px-0 text-sm md:text-base">
                                 <button className="w-full md:w-auto px-6 h-14 flex items-center justify-center gap-2 bg-[linear-gradient(to_bottom,#41B883_0%,#41B883_50%,#2EFFA2_100%)] hover:opacity-80 border-2 border-gray-300 text-white shadow-[0_6px_20px_rgba(46,255,162,0.35)] rounded-full cursor-pointer">
                                     Schedule a Call
                                 </button>
@@ -134,10 +137,10 @@ function Main() {
                     <Asterik />
                     <p>99% Client Satisfaction </p>
                 </div>
-                <div className='flex flex-shrink-0 items-center gap-4'>
+                {/* <div className='flex flex-shrink-0 items-center gap-4'>
                     <Asterik />
                     <p>5+ Projects Completed</p>
-                </div>
+                </div> */}
                 <div className='flex flex-shrink-0 items-center gap-4'>
                     <Asterik />
                     <p>5+ Years of Experience in Consulting</p>
