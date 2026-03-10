@@ -8,7 +8,8 @@ import {
   AlertDialogCancel,
   AlertDialogDescription,
 } from "@/components/ui/alert-dialog";
-import { CheckCircle2Icon } from "lucide-react";
+
+import CheckMarkCircle from '@/assets/icons/checkmark-circle.svg?react';
 
 const ActionModal = ({
   isOpen,
@@ -20,13 +21,13 @@ const ActionModal = ({
 
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
-      <AlertDialogContent className="mx-auto md:p-6 bg-white border border-gray rounded-xl">
-        <AlertDialogHeader className="w-full flex flex-col items-center justify-center">
-          <div className="w-16 h-16 space-y-2 flex items-center justify-center rounded-full">
-            <CheckCircle2Icon className="w-full h-full text-primary" />
+      <AlertDialogContent className="mx-auto md:p-6 bg-white border border-gray rounded-xl flex flex-col items-center">
+        <AlertDialogHeader className="w-full flex flex-col items-center justify-center text-center sm:!items-center sm:!text-center">
+          <div className="w-16 h-16 space-y-2 bg-[#41B883]/10 flex items-center justify-center rounded-full">
+            <CheckMarkCircle className="" />
           </div>
-          <AlertDialogTitle className="mt-3 text-base md:text-lg font-semibold">{title}</AlertDialogTitle>
-          <AlertDialogDescription className="text-sm md:text-base text-tertiary">
+          <AlertDialogTitle className="mt-3 text-base md:text-lg !font-normal !text-center">{title}</AlertDialogTitle>
+          <AlertDialogDescription className="text-sm md:text-base text-tertiary !text-center">
             {description}
           </AlertDialogDescription>
 
