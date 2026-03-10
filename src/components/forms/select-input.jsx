@@ -15,6 +15,7 @@ const SelectInput = ({
   options = [],
   placeholder = "Select an option",
   className = "",
+  error,
 }) => {
   return (
     <div className="w-full">
@@ -42,6 +43,10 @@ const SelectInput = ({
           ))}
         </SelectContent>
       </Select>
+
+      {error && (
+        <span className="text-xs text-red-500 mt-1 block">{error}</span>
+      )}
     </div>
   );
 };
